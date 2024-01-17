@@ -1,0 +1,58 @@
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+                <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s"  style="border-radius: 10px;box-shadow: 1px 2px 1px 2px #ccc;">
+                <div class="bg-light rounded p-5 pt-3">
+                    <h1 class="mb-4 text-center">{{'UserInfo.register'|translate }}</h1>
+                    <h1 class="mb-5 mt-4 "><hr  ></h1>
+                    <form [formGroup]=" signUpForm" (ngSubmit)="SignUp()"> 
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" formControlName="fullName" id="fullName" placeholder="{{'UserInfo.fullName' | translate}}">
+                                    <label for="fullName">{{'UserInfo.fullName' | translate}}</label>
+                                </div>
+                                    <div *ngIf="signUpForm?.get('fullName')?.hasError('required')" class="text-danger">{{"formError.fullNameObligatoire"|translate}}</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="{{'UserInfo.EmailAddress' | translate}}">
+                                    <label for="email">{{'UserInfo.EmailAddress' | translate}}</label>
+                                </div>
+                                <div *ngIf="signUpForm?.get('email')?.hasError('required')" class="text-danger">{{'formError.emailRequired'|translate}}</div>
+                                <div *ngIf="signUpForm?.get('email')?.hasError('pattern')" class="text-danger">{{'formError.emailInvalidError'|translate}}</div>
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <div class="form-floating">
+                                    <input type="password" formControlName="password" class="form-control" id="password"  placeholder="{{'UserInfo.password' | translate}}" required="">
+                                    <label for="password">{{'UserInfo.password' | translate}}</label>
+                                </div>
+                                <div *ngIf="signUpForm.get('password')?.hasError('noUppercase')" class="text-danger">
+                            {{"formError.passwordDoitContenirMajuscule"|translate}}                                  </div>
+                                  <div *ngIf="signUpForm.get('password')?.hasError('noLowercase')" class="text-danger">
+                                    {{"formError.passwordDoitContenirMinuscule"|translate}}
+                                  </div>
+                                  <div *ngIf="signUpForm.get('password')?.hasError('noSpecialCharacter')" class="text-danger">
+                                    {{"formError.passwordDoitContenirCaractèreSpecial"|translate}}
+                                  </div>
+                                  <div *ngIf="signUpForm.get('password')?.hasError('minLength')" class="text-danger">
+                                    {{"formError.passwordDoitContenir6Caractère"|translate}}
+                                  </div>
+                                  
+                            </div>
+                            <div class="col-12">
+                                <button class="btn register w-100 py-2" type="submit"><h4  style="color: #fff;">{{'UserInfo.register' | translate}}</h4></button>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class=" w-100 py-3 text-center" >{{"UserInfo.alreadyHaveAnAccount"|translate}}
+                                    <i class="fa fa-hand-point-left" style="color: #0084bd;"></i>
+                                    <a [routerLink]="['/login']">{{'UserInfo.login'|translate}}</a> </h5>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

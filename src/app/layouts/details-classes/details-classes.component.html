@@ -1,0 +1,122 @@
+<!-- Détails de la classe Start -->
+
+<div *ngIf="classy" class="card shadow border-0 mt-3">
+  <div class="card-body m-4">
+    <div class="me-4">
+      <h2 class="mb-2 mt-2 text-center">
+        {{ "classes.classeName" | translate }}:{{ classy && classy.name }}
+      </h2>
+      <p class="mb-2 text-center">
+        {{ "classeDetails.building" | translate }}:
+        {{ classy && classy.building }}
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        {{ "classeDetails.type" | translate }} : {{ classy.type }}
+      </li>
+      <li class="list-group-item">
+        {{ "classeDetails.departement" | translate }} : {{ classy.department }}
+      </li>
+      <li class="list-group-item">
+        {{ "classeDetails.nbrStudents" | translate }} :
+        {{ classy.capacityOfStudent }}
+      </li>
+      <li class="list-group-item">
+        {{ "classeDetails.note" | translate }} :
+        <span *ngIf="classy.note != '' && !editing">{{ classy.note }}</span>
+        <span *ngIf="classy.note == '' && !editing">{{
+          "classeDetails.noteEmpty" | translate
+        }}</span>
+        <button
+          *ngIf="!editing"
+          (click)="edit()"
+          style="margin-right: 20px"
+          class="btn btn-warning"
+        >
+          {{ "classeDetails.update" | translate }}
+        </button>
+        <div *ngIf="editing">
+          <form
+            [formGroup]="upNoteClasse"
+            (ngSubmit)="updateNoteClasse(classy._id)"
+          >
+            <div class="row">
+              <textarea
+                [formControlName]="'note'"
+                name="textarea"
+                rows="10"
+                cols="50"
+                style="color: gray"
+                [(ngModel)]="noteClass"
+              ></textarea>
+            </div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              style="margin-left: 10px; margin-top: 5px"
+            >
+              {{ "classeDetails.save" | translate }}
+            </button>
+            <button
+              style="margin-top: 5px"
+              class="btn btn-warning"
+              (click)="cancelEdit()"
+            >
+              {{ "classeDetails.cancel" | translate }}
+            </button>
+          </form>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4>{{ "classeDetails.devices" | translate }} :</h4>
+        <span >
+          <ul *ngIf="devices!= null">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    {{ "classeDetails.reference" | translate }}
+                  </th>
+                  <th scope="col">{{ "classeDetails.type" | translate }}</th>
+                  <th scope="col">{{ "classeDetails.note" | translate }}</th>
+                  <th scope="col">{{ "classeDetails.update" | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let dev of devices">
+                  <td scope="row">{{ dev.reference }}</td>
+                  <td>{{ dev.brand }}</td>
+                  <td
+                    *ngIf="dev.note != ''"
+                    style="
+                      word-wrap: break-word;
+                      overflow: scroll;
+                      max-width: 200px;
+                    "
+                  >
+                    <span *ngIf="dev.note != ''"> {{ dev.note }} </span>
+                  </td>
+                  <td *ngIf="dev.note == ''">
+                    {{ "classeDetails.noteEmpty" | translate }}
+                  </td>
+                  <td>
+                    <a (click)="open(dev._id)">
+                      <i
+                        style="font-size: 30px; color: #ffc107"
+                        class="fa fa-pencil-square"
+                      ></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ul>
+        </span>
+        <span *ngIf="lenclassDevices == 0">
+          {{ "classeDetails.deviceEmpty" | translate }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4>
+        {{ "classeDetails.updateNote" | translate }}
+      </h4>
+      <button
+        style="margin-right: 340px"
+        type="button"
+        class="btn-close btn-danger"
+        aria-label="Close"
+        (click)="close()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="updateNoteForm" (ngSubmit)="updateNote()">
+        <div class="row">
+          <textarea
+            [formControlName]="'note1'"
+            name="textarea"
+            rows="10"
+            cols="50"
+            style="color: gray"
+            [(ngModel)]="noty"
+          >
+          </textarea>
+        </div>
+        <div style="margin-top: 10px" class="form-group">
+          <button type="submit" style="margin-left: 10px;" class="btn btn-primary">
+            {{ "classeDetails.save" | translate }}
+          </button>
+          <button (click)="close()" class="btn btn-warning">
+            {{ "classeDetails.cancel" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

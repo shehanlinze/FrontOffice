@@ -1,0 +1,89 @@
+{
+    "UserInfo":
+    {   
+        "registrationNumber":"رقم التسجيل",
+        "FirstName": "الاسم الأول",
+        "LastName":"اسم العائلة ",
+        "fullName": "الاسم الكامل",
+        "EmailAddress":"البريد الالكتروني",
+        "password":"كلمة السر",
+        "login":"سجل الدخول",
+        "register":"سجل البيانات",
+        "alreadyHaveAnAccount":"هل لديك حساب بالفعل ؟",
+        "registerNow":"سجل الآن",
+        "dontHaveAnAccount":"ليس لديك حساب ؟",
+        "forgetPassword":"هل نسيت كلمة المرور ؟",
+        "logIn":"تسجيل ",
+        "reset":"إعادة تعين ",
+        "enterNewPassword":"أدخل كلمة المرور الجديدة",
+        "newPassword":"كلمة السر الجديدة ",
+        "sendNewPassword":"إرسال كلمة المرور"
+    
+    },
+    "formError":
+    {
+        "fullNameObligatoire":"الاسم الكامل ضروري",
+        "emailRequired":"البريد الإلكتروني ضروري",
+        "emailInvalidError": "البريد الإلكتروني غير صالح",
+            "passwordDoitContenirMajuscule": "يجب أن تحتوي كلمة المرور على حرف كبير على الأقل",
+            "passwordDoitContenirMinuscule": "يجب أن تحتوي كلمة المرور على حرف صغير على الأقل",
+            "passwordDoitContenirCaractèreSpecial": "يجب أن تحتوي كلمة المرور على حرف خاص على الأقل",
+            "passwordDoitContenir6Caractère": "يجب أن تحتوي كلمة المرور على ما لا يقل عن 6 أحرف"
+
+          
+    },
+    "topBar":
+    {
+        "heurDayStart":"الإثنين - الجمعة: 09.00 صباحًا - 09.00 مساءً"
+        
+    },
+    "navbar":
+    {
+        "home": "الصفحة الرئيسية",
+        "contact": "اتصل بنا",
+        "logout": "تسجيل الخروج",
+        "about": "عن الجامعة"
+    },
+    "footer":
+    {
+        "allRightReserved":"حقوق © 1957-2023 جميع الحقوق محفوظة . جامعة الملك سعود.",
+        "contactUs":"اتصل بنا",
+        "phoneNumber1":"+(966) 11 476 9434",
+        "phoneNumber2":"+(966) 11 467 4641",
+        "emailAddress":"salainzy@ksu.edu.sa",
+        "fax":"ص .ب 4545 الرمز البريدي145111",
+        "UniversityApplication":"تطبيقات الجامعة ",
+        "StaffE-services":"الخدمات الالكترونية للمنسوبين",
+        "StudentsE-services":"الخدمات الالكترونية للطلاب",
+        "AyatApp":"تطبيق آيات"
+    },
+    "classes":
+    {
+        "search":"يبحث",
+        "id":"المعرف الوحيد",
+        "show":"عرض",
+        "entries":"إدخالات",
+        "classeName": "إسم القاعة ",
+        "imageClasse": "الصورة",
+        "buildingName":"اسم المبنى "
+    },
+    "classeDetails":
+    {
+        "building":"المبنى ",
+         "nbrStudents":" عدد الطلبة",
+        "devices":" الأجهزة",
+        "type":"  الصنف ",
+        "note":"ملاحظات ",
+        "departement":"القسم ",
+        "reference":"المرجع",
+        "noteEmpty": "لا يوجد ملاحظات",
+        "deviceEmpty": "لا يوجد أجهزة",
+        "update":"تحديث" ,
+        "save":"حفظ"
+        ,"updateNote":" تحديث الملاحظات",
+        "cancel":"إلغاء",  
+          "notApprouved":"لم يتم قبولكم بعد"
+
+    }
+
+}

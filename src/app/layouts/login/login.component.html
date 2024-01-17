@@ -1,0 +1,38 @@
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4" >
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s" style="border-radius: 10px;box-shadow: 1px 2px 1px 2px #ccc;">
+                <div class="bg-light rounded p-5 pt-3">
+                    <h1 class="mb-4 text-center">{{"UserInfo.login"|translate}}</h1>
+                    <h1 class="mb-5 mt-4 ">  <hr >
+                    </h1>
+                    <form   [formGroup]="loginForm" (ngSubmit)="Login()"  >
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <div class="form-floating ">
+                                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="{{'UserInfo.EmailAddress'|translate}}"  >
+                                    <label for="email" class="rtl" style="direction: rtl;text-align: right;">{{'UserInfo.EmailAddress' |translate}} </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <div class="form-floating">
+                                    <input type="password" formControlName="password" class="form-control" id="password" placeholder="{{'UserInfo.password'|translate}}">
+                                    <label for="password">{{'UserInfo.password'|translate}}</label>
+                                </div>
+                                <div class="mt-2 text-start" > <a [routerLink]="['/forgotPassword']">{{'UserInfo.forgetPassword'|translate}}</a></div>
+                            </div>
+                         
+                            <div class="col-12">
+                                <button class="btn login w-100 py-2" type="submit"  ><h4 style="color: #fff;">{{'UserInfo.login'|translate}}</h4></button>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class=" w-100 py-3 text-center" >{{'UserInfo.dontHaveAnAccount' |translate}} <i class="fa fa-hand-point-left" style="color: #0084bd;"></i><a [routerLink]="['/register']">{{'UserInfo.registerNow'|translate}}</a></h5>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

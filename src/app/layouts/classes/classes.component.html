@@ -1,0 +1,25 @@
+<div *ngIf="staffStatus=='approuved'" class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-10 wow fadeInUp mx-auto" data-wow-delay="0.5s">
+                <div class="bg-light rounded p-5 table-responsive">
+                    <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="tableT" class="table table-bordered  table-sm  table-responsive mt-5">
+                 
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="staffStatus=='notApprouved'" class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-10 wow fadeInUp mx-auto" data-wow-delay="0.5s">
+                <div class="bg-light rounded p-5 table-responsive">
+                    <h2 style="color: red; margin-right: 40%;">{{ "classeDetails.notApprouved" | translate }} !! </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
